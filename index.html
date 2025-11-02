@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savio HSS Devagiri Scouts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f4f7ff;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #305CDE, #2A45A8);
+      color: #fff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      animation: slideDown 1s ease;
+    }
+
+    @keyframes slideDown {
+      from {transform: translateY(-100%); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px 15px;
+      display: block;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #FFD700;
+      transform: scale(1.1);
+    }
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #1A237E;
+      min-width: 160px;
+      top: 45px;
+      left: 0;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      overflow: hidden;
+      z-index: 100;
+    }
+
+    .dropdown-content a {
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background: #FFD700;
+      color: #1A237E;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .home {
+      text-align: center;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/8/8d/Bharat_Scouts_and_Guides_logo.png') no-repeat center/contain;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .home h2 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: #305CDE;
+    }
+
+    .home p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      color: #333;
+    }
+
+    .quick-section {
+      background: #305CDE;
+      color: #fff;
+      text-align: center;
+      padding: 50px 10%;
+      animation: fadeInUp 1s ease;
+    }
+
+    .quick-section h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #FFD700;
+    }
+
+    .quick-links a {
+      display: inline-block;
+      background: #2A45A8;
+      color: #fff;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: 500;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .quick-links a:hover {
+      background: #FFD700;
+      color: #1A237E;
+      transform: translateY(-3px);
+    }
+
+    .quick-links i {
+      margin-right: 8px;
+    }
+
+    footer {
+      background: #1A237E;
+      color: #fff;
+      text-align: center;
+      padding: 30px 10%;
+    }
+
+    footer a {
+      color: #FFD700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    @keyframes fadeInUp {
+      from {transform: translateY(30px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: rgba(0,0,0,0.95);
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        text-align: center;
+        transition: 0.4s;
+      }
+
+      nav ul.active {
+        left: 0;
+      }
+
+      .dropdown-content {
+        position: static;
+        background: #000;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .quick-links a {
+        display: block;
+        margin: 10px auto;
+        width: 60%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Savio Scouts</h1>
+      <ul id="menu">
+        <li><a href="#home" style="color:#FFD700;">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="gallery.html">Gallery ▾</a>
+          <div class="dropdown-content">
+            <a href="gallery.html">📸 Photos</a>
+            <a href="video.html">🎥 Videos</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="home" id="home">
+    <h2>Welcome to Savio HSS Devagiri Scouts</h2>
+    <p>Dedicated to service, discipline, and leadership — shaping young minds with courage and compassion.</p>
+  </section>
+
+  <section class="quick-section">
+    <h3>Quick Links</h3>
+    <div class="quick-links">
+      <a href="https://www.instagram.com/savio.scout/" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
+      <a href="gallery.html">📷 Gallery</a>
+      <a href="contact.html">📧 Contact</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Savio HSS Devagiri Scouts | Designed with ❤️ by the Scouts Team</p>
+    <p><a href="https://www.instagram.com/savio.scout/" target="_blank"><i class="fa-brands fa-instagram"></i> Follow us on Instagram</a></p>
+  </footer>
+
+  <script>
+    const navMenu = document.getElementById('menu');
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('h1')) {
+        navMenu.classList.toggle('active');
+      }
+    });
+  </script>
+</body>
+</html>

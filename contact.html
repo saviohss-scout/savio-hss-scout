@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Savio HSS Devagiri Scouts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f4f7ff;
+      color: #1a1a1a;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #305CDE, #4A74FF);
+      color: #fff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+      animation: slideDown 1s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+      transform: scale(1.1);
+    }
+
+    /* Contact Header */
+    .contact-header {
+      text-align: center;
+      padding: 60px 10% 30px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .contact-header h2 {
+      font-size: 2.5rem;
+      color: #305CDE;
+      margin-bottom: 10px;
+    }
+
+    .contact-header p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Contact Form */
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.2s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #305CDE;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #ffd700;
+      box-shadow: 0 0 10px rgba(48,92,222,0.3);
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    button {
+      background: #305CDE;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #ffd700;
+      color: #142048;
+      transform: scale(1.05);
+    }
+
+    /* Quick Links */
+    .quick-section {
+      background: linear-gradient(135deg, #305CDE, #4A74FF);
+      color: #fff;
+      text-align: center;
+      padding: 60px 10%;
+      margin-top: 60px;
+      animation: fadeIn 1s ease;
+    }
+
+    .quick-section h3 {
+      font-size: 1.9rem;
+      color: #ffd700;
+      margin-bottom: 25px;
+    }
+
+    .quick-links a {
+      display: inline-block;
+      background: #fff;
+      color: #305CDE;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .quick-links a:hover {
+      background: #ffd700;
+      color: #142048;
+      transform: translateY(-3px);
+    }
+
+    .quick-links i {
+      margin-right: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: #142048;
+      color: #fff;
+      text-align: center;
+      padding: 35px 10%;
+    }
+
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: rgba(0,0,0,0.9);
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        text-align: center;
+        transition: 0.4s;
+      }
+      nav ul.active { left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Savio Scouts</h1>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" style="color:#ffd700;">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact-header">
+    <h2>Contact Us</h2>
+    <p>Have questions, ideas, or want to collaborate with our scouts? We’d love to hear from you!</p>
+  </section>
+
+  <section class="contact-form">
+    <form action="thankyou.html" method="get">
+      <input type="text" name="name" placeholder="Your Full Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section class="quick-section">
+    <h3>Quick Links</h3>
+    <div class="quick-links">
+      <a href="https://www.instagram.com/savio.scout/" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
+      <a href="about.html">⚜️ About Us</a>
+      <a href="gallery.html">📷 Gallery</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Savio HSS Devagiri Scouts | Designed with ❤️ by the Scouts Team</p>
+    <p><a href="https://www.instagram.com/savio.scout/" target="_blank"><i class="fa-brands fa-instagram"></i> Follow us on Instagram</a></p>
+  </footer>
+
+  <script>
+    const navMenu = document.getElementById('menu');
+    document.addEventListener('click', e => {
+      if (e.target.closest('h1')) navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

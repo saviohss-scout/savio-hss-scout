@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Savio HSS Devagiri Scouts</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #222;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #305CDE, #3E6BFF);
+      color: #fff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      animation: slideDown 1s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+      transform: scale(1.1);
+    }
+
+    /* About */
+    .about-section {
+      padding: 70px 10%;
+      text-align: center;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .about-section h2 {
+      font-size: 2.6rem;
+      color: #305CDE;
+      margin-bottom: 25px;
+    }
+
+    .about-section p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* Mission Section */
+    .mission {
+      background: linear-gradient(135deg, #305CDE, #3E6BFF);
+      color: #fff;
+      padding: 70px 10%;
+      margin-top: 60px;
+      border-radius: 25px 25px 0 0;
+      box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 1.5s ease;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .mission h3 {
+      font-size: 2rem;
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+
+    .mission p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #fefefe;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    /* Quick Links */
+    .quick-section {
+      background: #305CDE;
+      color: #fff;
+      text-align: center;
+      padding: 60px 10%;
+      margin-top: 70px;
+      animation: fadeInUp 1s ease;
+    }
+
+    .quick-section h3 {
+      font-size: 2rem;
+      color: #ffd700;
+      margin-bottom: 25px;
+    }
+
+    .quick-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: #305CDE;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .quick-links a img {
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+
+    .quick-links a:hover {
+      background: #ffd700;
+      color: #1e40b8;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      background: #1e40b8;
+      color: #fff;
+      text-align: center;
+      padding: 35px 10%;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        text-align: center;
+        transition: 0.4s;
+        padding: 15px 0;
+      }
+
+      nav ul.active {
+        left: 0;
+      }
+
+      .quick-links a {
+        display: block;
+        margin: 15px auto;
+        width: 80%;
+      }
+
+      .about-section p,
+      .mission p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Savio Scouts</h1>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" style="color:#ffd700;">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <h2>About Savio Scouts</h2>
+    <p>
+      The <strong>Savio HSS Devagiri Scouts</strong> is more than a troop — it’s a family bound by courage, service, and leadership.  
+      Inspired by the spirit of the <em>Bharat Scouts & Guides</em>, we aim to shape young people into confident, responsible citizens who live by the Scout Law.  
+      Every step we take, every knot we tie, and every smile we share echoes our motto — “Be Prepared.”
+    </p>
+  </section>
+
+  <section class="mission">
+    <h3>Our Mission</h3>
+    <p>
+      To build leaders who serve with heart and courage.  
+      Through outdoor activities, teamwork, and community service, we guide every Scout to grow in body, mind, and spirit — leaving the world a little better than they found it.
+    </p>
+  </section>
+
+  <section class="quick-section">
+    <h3>Quick Links</h3>
+    <div class="quick-links">
+      <a href="https://www.instagram.com/savio.scout/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+        Follow us on Instagram
+      </a>
+      <a href="gallery.html">⚜️ Scout Gallery</a>
+      <a href="contact.html">📧 Contact</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Savio HSS Devagiri Scouts | Designed with 💙 by the Scouts Team</p>
+    <p><a href="https://www.instagram.com/savio.scout/" target="_blank">Instagram</a></p>
+  </footer>
+
+  <script>
+    const navMenu = document.getElementById('menu');
+    document.querySelector('h1').addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

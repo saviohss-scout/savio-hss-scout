@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scout Videos | Savio HSS Devagiri Scouts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f7f9ff;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #305CDE, #3E6BFF);
+      color: #fff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px 15px;
+      display: block;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+      transform: scale(1.1);
+    }
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #1A237E;
+      min-width: 160px;
+      top: 45px;
+      left: 0;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      overflow: hidden;
+      z-index: 100;
+    }
+
+    .dropdown-content a {
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background: #FFD700;
+      color: #1A237E;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .video-header {
+      text-align: center;
+      padding: 70px 10% 20px;
+    }
+
+    .video-header h2 {
+      font-size: 2.6rem;
+      color: #305CDE;
+      margin-bottom: 15px;
+    }
+
+    .video-header p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      padding: 50px 10%;
+    }
+
+    .video-item {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+
+    .video-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .video-item iframe,
+    .video-item video {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .caption {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .caption h4 {
+      font-size: 1.05rem;
+      color: #305CDE;
+    }
+
+    footer {
+      background: #1e40b8;
+      color: #fff;
+      text-align: center;
+      padding: 35px 10%;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: rgba(0,0,0,0.95);
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        text-align: center;
+        transition: 0.4s;
+      }
+      nav ul.active { left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>Savio Scouts</h1>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="gallery.html" style="color:#ffd700;">Gallery ▾</a>
+          <div class="dropdown-content">
+            <a href="gallery.html">📸 Photos</a>
+            <a href="video.html">🎥 Videos</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="video-header">
+    <h2>Scout Event Videos</h2>
+    <p>Relive our proudest scouting moments captured on camera.</p>
+  </section>
+
+  <section class="video-grid">
+    <div class="video-item">
+      <iframe src="flashmob.mp4" allowfullscreen></iframe>
+      <div class="caption"><h4>Flashmob Performance</h4></div>
+    </div>
+
+    <div class="video-item">
+      <iframe src="yogaday.mp4" allowfullscreen></iframe>
+      <div class="caption"><h4>Yoga Day Celebration</h4></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Savio HSS Devagiri Scouts | Designed with 💙 by the Scouts Team</p>
+  </footer>
+
+  <script>
+    const navMenu = document.getElementById('menu');
+    document.addEventListener('click', e => {
+      if (e.target.closest('h1')) navMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
