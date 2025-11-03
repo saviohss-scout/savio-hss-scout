@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savio HSS Devagiri Scouts</title>
+  <title>Savio Scouts & Guides</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
@@ -22,7 +22,7 @@
     header {
       background: linear-gradient(135deg, #305CDE, #2A45A8);
       color: #fff;
-      padding: 20px 0;
+      padding: 15px 0;
       position: sticky;
       top: 0;
       width: 100%;
@@ -44,7 +44,7 @@
     }
 
     nav h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 600;
       letter-spacing: 1px;
       cursor: pointer;
@@ -111,6 +111,7 @@
       to {opacity: 1; transform: translateY(0);}
     }
 
+    /* Home Section */
     .home {
       text-align: center;
       background: url('https://upload.wikimedia.org/wikipedia/commons/8/8d/Bharat_Scouts_and_Guides_logo.png') no-repeat center/contain;
@@ -123,17 +124,18 @@
     }
 
     .home h2 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       margin-bottom: 15px;
       color: #305CDE;
     }
 
     .home p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       max-width: 600px;
       color: #333;
     }
 
+    /* Quick Section */
     .quick-section {
       background: #305CDE;
       color: #fff;
@@ -171,6 +173,7 @@
       margin-right: 8px;
     }
 
+    /* Footer */
     footer {
       background: #1A237E;
       color: #fff;
@@ -193,12 +196,23 @@
       to {transform: translateY(0); opacity: 1;}
     }
 
+    /* Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
       nav ul {
         flex-direction: column;
         background: rgba(0,0,0,0.95);
         position: absolute;
-        top: 70px;
+        top: 65px;
         left: -100%;
         width: 100%;
         text-align: center;
@@ -207,6 +221,11 @@
 
       nav ul.active {
         left: 0;
+      }
+
+      nav ul li a {
+        padding: 15px;
+        font-size: 1.1rem;
       }
 
       .dropdown-content {
@@ -219,7 +238,7 @@
       .quick-links a {
         display: block;
         margin: 10px auto;
-        width: 60%;
+        width: 70%;
       }
     }
   </style>
@@ -227,7 +246,8 @@
 <body>
   <header>
     <nav>
-      <h1>Savio Scouts</h1>
+      <h1>Savio Scouts & Guides</h1>
+      <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
       <ul id="menu">
         <li><a href="#home" style="color:#FFD700;">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -244,8 +264,8 @@
   </header>
 
   <section class="home" id="home">
-    <h2>Welcome to Savio HSS Devagiri Scouts</h2>
-    <p>Dedicated to service, discipline, and leadership — shaping young minds with courage and compassion.</p>
+    <h2>Welcome to Savio Scouts & Guides</h2>
+    <p>Dedicated to service, discipline, and leadership — inspiring courage and compassion in every Scout and Guide.</p>
   </section>
 
   <section class="quick-section">
@@ -258,16 +278,16 @@
   </section>
 
   <footer>
-    <p>© 2025 Savio HSS Devagiri Scouts | Designed with ❤️ by the Scouts Team</p>
+    <p>© 2025 Savio Scouts & Guides | Designed with ❤️ by the Scout & Guide Team</p>
     <p><a href="https://www.instagram.com/savio.scout/" target="_blank"><i class="fa-brands fa-instagram"></i> Follow us on Instagram</a></p>
   </footer>
 
   <script>
+    const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('menu');
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('h1')) {
-        navMenu.classList.toggle('active');
-      }
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
     });
   </script>
 </body>
