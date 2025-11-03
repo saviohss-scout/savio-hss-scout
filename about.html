@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Savio HSS Devagiri Scouts</title>
+  <title>About | Savio Scouts & Guides</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -22,7 +23,7 @@
     header {
       background: linear-gradient(135deg, #305CDE, #3E6BFF);
       color: #fff;
-      padding: 20px 0;
+      padding: 15px 0;
       position: sticky;
       top: 0;
       width: 100%;
@@ -44,7 +45,7 @@
     }
 
     nav h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 600;
       cursor: pointer;
     }
@@ -65,6 +66,13 @@
     nav ul li a:hover {
       color: #ffd700;
       transform: scale(1.1);
+    }
+
+    /* Hamburger menu */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
     }
 
     /* About */
@@ -193,11 +201,15 @@
 
     /* Mobile */
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
       nav ul {
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(0, 0, 0, 0.95);
         position: absolute;
-        top: 70px;
+        top: 65px;
         left: -100%;
         width: 100%;
         text-align: center;
@@ -207,6 +219,11 @@
 
       nav ul.active {
         left: 0;
+      }
+
+      nav ul li a {
+        font-size: 1.1rem;
+        padding: 15px;
       }
 
       .quick-links a {
@@ -225,7 +242,8 @@
 <body>
   <header>
     <nav>
-      <h1>Savio Scouts</h1>
+      <h1>Savio Scouts & Guides</h1>
+      <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
       <ul id="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" style="color:#ffd700;">About</a></li>
@@ -236,11 +254,11 @@
   </header>
 
   <section class="about-section">
-    <h2>About Savio Scouts</h2>
+    <h2>About Savio Scouts & Guides</h2>
     <p>
-      The <strong>Savio HSS Devagiri Scouts</strong> is more than a troop — it’s a family bound by courage, service, and leadership.  
-      Inspired by the spirit of the <em>Bharat Scouts & Guides</em>, we aim to shape young people into confident, responsible citizens who live by the Scout Law.  
-      Every step we take, every knot we tie, and every smile we share echoes our motto — “Be Prepared.”
+      The <strong>Savio HSS Devagiri Scouts & Guides</strong> is more than a troop — it’s a family united by courage, service, and leadership.  
+      Inspired by the spirit of the <em>Bharat Scouts & Guides</em>, we aim to shape young people into confident, responsible citizens who live by the Scout and Guide Law.  
+      Every step we take, every knot we tie, and every smile we share echoes our motto — <strong>“Be Prepared.”</strong>
     </p>
   </section>
 
@@ -248,7 +266,7 @@
     <h3>Our Mission</h3>
     <p>
       To build leaders who serve with heart and courage.  
-      Through outdoor activities, teamwork, and community service, we guide every Scout to grow in body, mind, and spirit — leaving the world a little better than they found it.
+      Through outdoor activities, teamwork, and community service, we guide every Scout and Guide to grow in body, mind, and spirit — leaving the world a little better than they found it.
     </p>
   </section>
 
@@ -259,19 +277,20 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
         Follow us on Instagram
       </a>
-      <a href="gallery.html">⚜️ Scout Gallery</a>
+      <a href="gallery.html">⚜️ Gallery</a>
       <a href="contact.html">📧 Contact</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Savio HSS Devagiri Scouts | Designed with 💙 by the Scouts Team</p>
+    <p>© 2025 Savio Scouts & Guides | Designed with 💙 by the Scout & Guide Team</p>
     <p><a href="https://www.instagram.com/savio.scout/" target="_blank">Instagram</a></p>
   </footer>
 
   <script>
+    const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('menu');
-    document.querySelector('h1').addEventListener('click', () => {
+    menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
   </script>
