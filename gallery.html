@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery | Savio HSS Devagiri Scouts</title>
+  <title>Gallery | Savio HSS Devagiri Scouts & Guides</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -59,6 +59,13 @@
     nav ul li a:hover {
       color: #ffd700;
       transform: scale(1.1);
+    }
+
+    /* Hamburger Icon */
+    .menu-toggle {
+      display: none;
+      font-size: 1.9rem;
+      cursor: pointer;
     }
 
     .gallery-header {
@@ -179,7 +186,12 @@
       color: #fff;
     }
 
+    /* Media Queries */
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
       nav ul {
         flex-direction: column;
         background: rgba(0,0,0,0.95);
@@ -189,8 +201,11 @@
         width: 100%;
         text-align: center;
         transition: 0.4s;
+        padding: 15px 0;
       }
+
       nav ul.active { left: 0; }
+
       .quick-links a {
         display: block;
         margin: 12px auto;
@@ -203,7 +218,8 @@
 
   <header>
     <nav>
-      <h1>Savio Scouts</h1>
+      <h1>Savio Scouts & Guides</h1>
+      <span class="menu-toggle">&#9776;</span>
       <ul id="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -214,11 +230,14 @@
   </header>
 
   <section class="gallery-header">
-    <h2>Scout Moments Gallery</h2>
+    <h2>Scouts & Guides Moments Gallery</h2>
     <p>Every frame captures teamwork, courage, and the true spirit of scouting.</p>
   </section>
 
-  <section class="gallery-grid">
+  <!-- Your full gallery grid stays exactly the same -->
+  <!-- (no change, all your image blocks kept) -->
+
+   <section class="gallery-grid">
 
     <!-- 🖼️ Auto Generated Gallery -->
     <div class="gallery-item"><img src="1.jpg"><div class="caption"><h4>Team work</h4></div></div>
@@ -270,13 +289,15 @@
   </section>
 
   <footer>
-    <p>© 2025 Savio HSS Devagiri Scouts | Designed with 💙 by the Scouts Team</p>
+    <p>© 2025 Savio HSS Devagiri Scouts & Guides | Designed with 💙 by the Scouts Team</p>
   </footer>
 
   <script>
     const navMenu = document.getElementById('menu');
-    document.addEventListener('click', e => {
-      if (e.target.closest('h1')) navMenu.classList.toggle('active');
+    const toggle = document.querySelector('.menu-toggle');
+
+    toggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
     });
   </script>
 
